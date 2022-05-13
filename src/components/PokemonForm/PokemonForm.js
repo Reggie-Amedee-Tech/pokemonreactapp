@@ -1,24 +1,21 @@
-import React, {useState} from "react";
-
-
+import React, { useState, useEffect } from "react";
 
 const PokemonForm = (props) => {
-
-    const {pokemon, onChangeHandler, onSubmitHandler} = props;
+    const { onSubmitHandler, onChangeHandler, pokemon } = props;
 
     return <>
-    
-    <form onSubmit={onSubmitHandler}>
+
+        <form onSubmit={onSubmitHandler}>
             <label>Type in your Pokemon name</label>
             <input
-            type="text"
-            value={pokemon}
-            onChange={onChangeHandler}
+                type="text"
+                value={pokemon}
+                onChange={onChangeHandler}
             ></input>
             <button type="submit">Press Me</button>
         </form>
-        
-    
+
+
     </>
 
 }
