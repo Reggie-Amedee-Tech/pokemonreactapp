@@ -6,7 +6,7 @@ const PokemonApi = () => {
     const [currentPokemon, setCurrentPokemon] = useState({});
 
     useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
         .then(response => response.json())
         .then((response) => {
             setResponseObj({response})
@@ -19,10 +19,24 @@ const PokemonApi = () => {
         setCurrentPokemon(responseObj)
     }
 
+    function onChangeHandler(e) {
+        setPokemon(e.target.value)
+    }
+
     return <>
         <h1>Get Pokemon</h1>
         {JSON.stringify(currentPokemon)}
-        <button onClick={onSubmitHandler}>Press Me</button>
+        
+
+        <form onSubmit={onSubmitHandler}>
+            <label>Type in your Pokemon name</label>
+            <input
+            type="text"
+            value={pokemon}
+            onChange={onChangeHandler}
+            ></input>
+            <button type="submit">Press Me</button>
+        </form>
     
     </>
 }
