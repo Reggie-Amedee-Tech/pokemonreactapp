@@ -9,7 +9,13 @@ const PokemonList = (props) => {
 
 
     return <>
-    
+    <div>
+        {currentPokemon.map(item => {
+            return <div>
+                <p>{item.name}</p>
+            </div>
+        })}
+    </div>
 
     
     </>

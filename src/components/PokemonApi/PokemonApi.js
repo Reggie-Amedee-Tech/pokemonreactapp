@@ -1,16 +1,18 @@
 import React, {useState, useEffect} from "react";
 import PokemonForm from "../PokemonForm/PokemonForm";
+import PokemonList from "../PokemonList/PokemonList";
 
 const PokemonApi = () => {
     const [responseObj, setResponseObj] = useState({});
     const [pokemon, setPokemon] = useState('');
-    const [currentPokemon, setCurrentPokemon] = useState({});
+    const [currentPokemon, setCurrentPokemon] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
         .then(response => response.json())
         .then((response) => {
-            setResponseObj({response})
+            setResponseObj([response])
         })
         
     }, [pokemon])
@@ -26,10 +28,11 @@ const PokemonApi = () => {
 
     return <>
         <h1>Get Pokemon</h1>
-        {JSON.stringify(currentPokemon)}
+        
         
 
         <PokemonForm pokemon={pokemon} onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler}/>
+        <PokemonList currentPokemon={currentPokemon} loading={loading}/>
     
     </>
 }
