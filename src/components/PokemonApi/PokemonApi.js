@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import PokemonForm from "../PokemonForm/PokemonForm";
 
 const PokemonApi = () => {
     const [responseObj, setResponseObj] = useState({});
@@ -12,7 +13,7 @@ const PokemonApi = () => {
             setResponseObj({response})
         })
         
-    })
+    }, [pokemon])
 
     function onSubmitHandler (e) {
         e.preventDefault()
@@ -28,15 +29,7 @@ const PokemonApi = () => {
         {JSON.stringify(currentPokemon)}
         
 
-        <form onSubmit={onSubmitHandler}>
-            <label>Type in your Pokemon name</label>
-            <input
-            type="text"
-            value={pokemon}
-            onChange={onChangeHandler}
-            ></input>
-            <button type="submit">Press Me</button>
-        </form>
+        <PokemonForm pokemon={pokemon} onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler}/>
     
     </>
 }
