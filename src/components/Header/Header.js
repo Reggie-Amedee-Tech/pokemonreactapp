@@ -5,7 +5,7 @@ const Header = () => {
 
     return <>
     
-    <h1>Pokedex</h1>
+    <h1>React: Pokedex</h1>
     
     </>
 }

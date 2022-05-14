@@ -1,0 +1,21 @@
+.TopShell {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+}
+
+.Img {
+    width: 200px;
+    height: 200px;
+}
+
+.H3 {
+    text-align: center;
+}
+
+.Ol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

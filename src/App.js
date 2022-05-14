@@ -19,9 +19,7 @@ function App() {
           setRequest(true)
           return response.json()
 
-        } else {
-          setRequest(false)
-        }
+        } 
         throw new Error('Request Failed')
       }, networkError => {
         console.log(networkError.message)
@@ -31,18 +29,14 @@ function App() {
       })
       .catch(function(error) {
         console.log(error)
-        
-
       })
-
-
-
   }, [pokemon])
 
   function onSubmitHandler(e) {
     e.preventDefault()
     setCurrentPokemon([responseObj])
 
+    setPokemon('')
 
   }
 
