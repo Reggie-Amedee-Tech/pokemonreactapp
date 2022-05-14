@@ -35,8 +35,10 @@ function App() {
   function onSubmitHandler(e) {
     e.preventDefault()
     if (responseObj.count === 1126) {
+      setPokemon('')
       setRequest(false)
       console.log('ERROR')
+      
     }
     else {
       setCurrentPokemon([responseObj])
