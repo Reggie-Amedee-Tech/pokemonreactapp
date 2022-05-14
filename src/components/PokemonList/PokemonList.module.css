@@ -1,13 +1,30 @@
 .TopShell {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    
+}
+
+.H1 {
+    text-align: center;
+    border-bottom: black 3px solid;
+}
+
+.P {
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.Bottomshell {
+    margin: 0 auto;
+}
+
+.Pic {
+    border-right: solid black 3px;
 }
 
 .Img {
     width: 200px;
-    height: 200px;
+    height: 250px;
 }
 
 .H3 {
@@ -19,3 +36,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+.Li {
+    list-style-type: none;
+}
+
+
+

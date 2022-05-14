@@ -1,25 +1,30 @@
+.App {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
 header {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  
 }
 
 main {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   justify-content: space-around;
-  height: 100vh;
+  height: 70vh;
   align-items: center;
   border: dotted red 3px;
   margin: 0 auto;
 }
 
 section {
-  border: dotted blue 3px;
-  width: 40%;
-  padding: 40px;
-
+  border: black solid 3px;
+  padding: 50px;
 }
 
 footer {
