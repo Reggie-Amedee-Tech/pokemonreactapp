@@ -16,7 +16,6 @@ function App() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
       .then(response => {
         if (response.ok) {
-          setRequest(true)
           return response.json()
 
         } 
@@ -28,15 +27,24 @@ function App() {
         return setResponseObj(jsonResponse)
       })
       .catch(function(error) {
+        
         console.log(error)
       })
   }, [pokemon])
 
   function onSubmitHandler(e) {
     e.preventDefault()
-    setCurrentPokemon([responseObj])
+    if (responseObj.count === 1126) {
+      setRequest(false)
+      console.log('ERROR')
+    }
+    else {
+      setCurrentPokemon([responseObj])
+      setPokemon('')
+      setRequest(true)
+    }
 
-    setPokemon('')
+    
 
   }
 
