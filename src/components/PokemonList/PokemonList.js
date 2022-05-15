@@ -6,7 +6,7 @@ const PokemonList = (props) => {
     const { currentPokemon, request } = props;
 
     return <>
-        {request === false ? <p>Please input a valid pokemon</p> :
+        {request === false ? <p className={classes.PError}>Please input a valid pokemon</p> :
             <div>
                 {currentPokemon.map(item => {
                     return (
@@ -14,8 +14,8 @@ const PokemonList = (props) => {
                     <div>
                         <React.Fragment key={item.id}>
                             <div className={classes.TopShell}>
-                                <div >
-                                    <img src={item.sprites.front_default} alt='picture of pokemon' className={classes.Img}></img>
+                                <div>
+                                    <img src={item.sprites.other["official-artwork"].front_default} alt='picture of pokemon' className={classes.Img}></img>
                                 </div>
                                 <div className={classes.Bottomshell}>
                                     <h1 className={classes.H1}>Pokemon Name</h1>

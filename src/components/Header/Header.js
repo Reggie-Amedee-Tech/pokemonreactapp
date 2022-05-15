@@ -8,7 +8,7 @@ const Header = () => {
     return <>
     <div className={classes.Topshell}>
     <img src={PokemonLogo} className={classes.Img}></img>
-    <h1 className={classes.H1}>:Codex</h1>
+    <h1 className={classes.H1}>: Codex</h1>
     </div>
     </>
 }

@@ -1,9 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import PokemonForm from './components/PokemonForm/PokemonForm';
 import PokemonList from './components/PokemonList/PokemonList';
 import Header from './components/Header/Header';
 import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive'
+
 
 
 function App() {
@@ -50,19 +51,25 @@ function App() {
   function onChangeHandler(e) {
     setPokemon(e.target.value.toLowerCase())
   }
+
+
+  const isLittleScreen = useMediaQuery({
+    query: '(min-width: 580px)'
+  })
+  
   return (
     <div className="App">
       <header>
         <Header />
       </header>
-      <main>
+      { isLittleScreen && <main>
       <section>
         <PokemonForm pokemon={pokemon} onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} />
         </section>
       <section>
         <PokemonList currentPokemon={currentPokemon} request={request}/>
       </section>
-      </main>
+      </main>}
       <footer>
         Page created by Reginald Jean Amedee
       </footer>

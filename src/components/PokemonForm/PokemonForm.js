@@ -8,14 +8,14 @@ const PokemonForm = (props) => {
         
             <form onSubmit={onSubmitHandler}>
             <div className={classes.Form}>
-                <label className={classes.Label}>Type in your Pokemon name</label>
+                <label className={classes.Label}>Please input a Pokémon</label>
                 <input
                     type="text"
                     value={pokemon}
                     onChange={onChangeHandler}
                     className={classes.Input}
                 ></input>
-                <button type="submit" className={classes.Button}>Press Me</button>
+                <button type="submit" className={classes.Button}>Search</button>
                 </div>
             </form>
         
