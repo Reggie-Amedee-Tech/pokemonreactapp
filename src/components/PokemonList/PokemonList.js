@@ -9,10 +9,12 @@ const PokemonList = (props) => {
         {request === false ? <p>Please input a valid pokemon</p> :
             <div>
                 {currentPokemon.map(item => {
-                    return (<div>
+                    return (
+                    
+                    <div>
                         <React.Fragment key={item.id}>
                             <div className={classes.TopShell}>
-                                <div className={classes.Pic}>
+                                <div >
                                     <img src={item.sprites.front_default} alt='picture of pokemon' className={classes.Img}></img>
                                 </div>
                                 <div className={classes.Bottomshell}>

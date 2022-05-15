@@ -1,14 +1,14 @@
 .App {
   margin: 0px;
   padding: 0px;
+  
 }
-
-
 
 header {
   text-align: center;
   font-size: 1.5rem;
-  
+  border-bottom: 4px solid black;
+  background-color: #FFDE00;
 }
 
 main {
@@ -16,15 +16,15 @@ main {
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-  height: 70vh;
+  height: 100vh;
   align-items: center;
-  border: dotted red 3px;
   margin: 0 auto;
+  background-color: #FFDE00;
 }
 
 section {
-  border: black solid 3px;
-  padding: 50px;
+  height: auto;
+  width: 40%;
 }
 
 footer {

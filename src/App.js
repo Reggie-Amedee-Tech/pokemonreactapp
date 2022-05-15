@@ -45,15 +45,11 @@ function App() {
       setPokemon('')
       setRequest(true)
     }
-
-    
-
   }
 
   function onChangeHandler(e) {
     setPokemon(e.target.value.toLowerCase())
   }
-
   return (
     <div className="App">
       <header>

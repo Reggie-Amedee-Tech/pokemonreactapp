@@ -1,0 +1,26 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+}
+
+.Label {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.Input {
+    width: 200px;
+    padding: 5px;
+    margin: 0 auto;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.Button {
+    width: 90px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
