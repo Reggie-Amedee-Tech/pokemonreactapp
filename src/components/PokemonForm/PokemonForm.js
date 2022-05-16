@@ -8,12 +8,13 @@ const PokemonForm = (props) => {
         
             <form onSubmit={onSubmitHandler}>
             <div className={classes.Form}>
-                <label className={classes.Label}>Please input a Pokémon</label>
+                <label className={classes.Label}>Search Pokémon database</label>
                 <input
                     type="text"
                     value={pokemon}
                     onChange={onChangeHandler}
                     className={classes.Input}
+                    placeholder="Only input letters!"
                 ></input>
                 <button type="submit" className={classes.Button}>Search</button>
                 </div>

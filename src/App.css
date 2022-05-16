@@ -14,9 +14,8 @@ header {
 main {
   display: flex;
   flex-direction: row;
-  
   justify-content: space-around;
-  height: 100vh;
+  height: 105vh;
   align-items: center;
   margin: 0 auto;
   background-color: #FFDE00;

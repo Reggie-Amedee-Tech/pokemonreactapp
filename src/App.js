@@ -11,13 +11,15 @@ function App() {
   const [pokemon, setPokemon] = useState('');
   const [currentPokemon, setCurrentPokemon] = useState([]);
   const [responseObj, setResponseObj] = useState({});
-  const [request, setRequest] = useState()
+  const [request, setRequest] = useState();
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+
       .then(response => {
         if (response.ok) {
           return response.json()
+          console.log(response)
 
         } 
         throw new Error('Request Failed')

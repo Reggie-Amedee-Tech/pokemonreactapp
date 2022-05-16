@@ -25,7 +25,7 @@ const PokemonList = (props) => {
                                     <div>
                                         <h1 className={classes.H1}>Abilities</h1>
                                             {item.abilities.map((pitem) => {
-                                                return <p className={classes.P}>{pitem.ability.name}</p>
+                                                return <p className={classes.P}>{pitem.ability.name.toUpperCase()}</p>
                                             })}  
                                     </div>
                                 </div>
