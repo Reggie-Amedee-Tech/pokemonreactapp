@@ -14,7 +14,7 @@ header {
 main {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  
   justify-content: space-around;
   height: 100vh;
   align-items: center;
@@ -32,3 +32,5 @@ footer {
   padding: 40px;
   background-color: grey;
 }
+
+

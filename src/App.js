@@ -53,23 +53,32 @@ function App() {
   }
 
 
-  const isLittleScreen = useMediaQuery({
-    query: '(min-width: 580px)'
-  })
+  const isLittleScreen = useMediaQuery({minWidth: 480, maxWidth: 700})
   
   return (
     <div className="App">
       <header>
         <Header />
       </header>
-      { isLittleScreen && <main>
+      { isLittleScreen ? 
+      <main style={{display: "flex", flexDirection: "column"}}>
+        <section>
+        <PokemonForm pokemon={pokemon} onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} />
+        </section>
+      <section>
+        <PokemonList currentPokemon={currentPokemon} request={request}/>
+      </section>
+      </main> :
+
+      <main>
       <section>
         <PokemonForm pokemon={pokemon} onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} />
         </section>
       <section>
         <PokemonList currentPokemon={currentPokemon} request={request}/>
       </section>
-      </main>}
+      </main>
+}
       <footer>
         Page created by Reginald Jean Amedee
       </footer>

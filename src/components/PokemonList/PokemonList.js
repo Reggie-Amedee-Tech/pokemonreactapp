@@ -14,8 +14,8 @@ const PokemonList = (props) => {
                     <div>
                         <React.Fragment key={item.id}>
                             <div className={classes.TopShell}>
-                                <div>
-                                    <img src={item.sprites.other["official-artwork"].front_default} alt='picture of pokemon' className={classes.Img}></img>
+                                <div className={classes.ImgDiv}>
+                                    <img src={item.sprites.other["official-artwork"].front_default} alt='pokemon_img' className={classes.Img}></img>
                                 </div>
                                 <div className={classes.Bottomshell}>
                                     <h1 className={classes.H1}>Pokemon Name</h1>
