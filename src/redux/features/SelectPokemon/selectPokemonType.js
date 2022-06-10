@@ -1,0 +1,2 @@
+export const POKEMON_NAME = 'POKEMON_NAME'
+export const POKEMON_ERROR = 'POKEMON_ERROR'
