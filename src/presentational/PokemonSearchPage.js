@@ -5,11 +5,27 @@ import GetPokemon from '../components/GetPokemon';
 
 function PokemonSearchPage(props) {
     const [pokemonName, setPokemonName] = useState('')
+    const {selectedPokeData} = props;
+
     return (
         <div>
+            <div>
             <GetPokemon setPokemonName={setPokemonName} pokemonName={pokemonName}/>
             <button onClick={() => props.selectPokemon(pokemonName)}>Find Pokemon</button>     
-        </div>
+            </div>
+
+
+            {selectedPokeData.loading ? <h2>Please input pokemon</h2> :
+            
+            <div>
+               <img src={selectedPokeData.selectedPokemon.sprites.other['official-artwork'].front_default} alt="pokemon picture"></img>
+               <p>{selectedPokeData.selectedPokemon.name}</p>
+                
+            </div>}
+
+            </div>
+             
+         
     );
 }
 

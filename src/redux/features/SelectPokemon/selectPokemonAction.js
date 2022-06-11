@@ -23,7 +23,6 @@ export const selectPokemonApiCall = (selectedPokemon) => {
                 const currentlySelectedPokemon = response.data
                 dispatch(selectPokemon(currentlySelectedPokemon))
                 console.log(currentlySelectedPokemon)
-
             })
             .catch(error => {
                 const errorMsg = error.message

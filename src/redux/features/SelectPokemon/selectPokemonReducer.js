@@ -19,15 +19,13 @@ const initialState = {
         return {
             ...state,
             selectedPokemonError: action.payload,
-            loading: false
+            loading: true
         }
 
         default:
             return state
     }
 }
-
-
 
 
 export default selectPokemonReducer
