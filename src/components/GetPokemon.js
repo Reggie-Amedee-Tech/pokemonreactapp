@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from '../cssModules/GetPokemon.module.css'
 
 
 const GetPokemon = (props) => {
@@ -7,7 +8,7 @@ const GetPokemon = (props) => {
     
     return (
         <div>
-            <input type="text" value={pokemonName} onChange={(e) => setPokemonName(e.target.value)}/>
+            <input type="text" value={pokemonName} onChange={(e) => setPokemonName(e.target.value.toLowerCase())} className={classes.Input}/>
         </div>
     );
 };

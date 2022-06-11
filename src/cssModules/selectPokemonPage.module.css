@@ -1,0 +1,53 @@
+.DivPrime {
+    background-image: url('../assets/choosePokemonBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+    
+    
+    
+}
+
+
+
+.DivTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PokemonSearchBar {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.Button {
+    margin-top: 10px;
+    font-size: larger;
+    padding: 5px;
+    background-color: #FF0000;
+    color: white;
+    font-weight: bold;
+    
+    
+}
+
+.Img {
+    margin: 0 auto;
+}
+
+.Name {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.DivBottom {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    position: relative;
+    left: 35vh;
+}

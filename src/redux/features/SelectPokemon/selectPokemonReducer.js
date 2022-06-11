@@ -1,7 +1,7 @@
 import { POKEMON_ERROR, POKEMON_NAME } from "./selectPokemonType"
 
 const initialState = {
-    loading: true,
+    loading: null,
     selectedPokemon: [],
     error: ''
 }
