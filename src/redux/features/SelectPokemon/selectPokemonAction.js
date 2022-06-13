@@ -1,5 +1,11 @@
 import axios from "axios"
-import { POKEMON_ERROR, POKEMON_NAME } from "./selectPokemonType"
+import { POKEMON_ERROR, POKEMON_NAME, POKEMON_QUERY } from "./selectPokemonType"
+
+export const selectPokemonQuery = () => {
+    return {
+        type: POKEMON_QUERY
+    }
+}
 
 export const selectPokemon = selectedPokemon => {
     return {
@@ -15,12 +21,16 @@ const selectPokemonError = selectedPokemonError => {
     }
 }
 
-export const selectPokemonApiCall = (selectedPokemon) => {
+export const selectPokemonApiCall = (selectedPokemon = 'v') => {
 
     return (dispatch) => {
+        dispatch(selectPokemon)
         axios.get('https://pokeapi.co/api/v2/pokemon/' + selectedPokemon)
             .then(response => {
                 const currentlySelectedPokemon = response.data
+                if (currentlySelectedPokemon.count === 1126) {
+                    return
+                }
                 dispatch(selectPokemon(currentlySelectedPokemon))
                 console.log(currentlySelectedPokemon)
             })

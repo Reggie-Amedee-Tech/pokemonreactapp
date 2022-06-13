@@ -1,2 +1,3 @@
 export const POKEMON_NAME = 'POKEMON_NAME'
 export const POKEMON_ERROR = 'POKEMON_ERROR'
+export const POKEMON_QUERY = 'POKEMON_QUERY'
