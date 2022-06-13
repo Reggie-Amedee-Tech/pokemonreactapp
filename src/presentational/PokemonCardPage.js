@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getPokemon } from '../redux/features/GetPokemonList/getPokemonAction';
+import {getDetailedPokemon} from '../redux/features/DetailedPokemon/detailedPokemonAction'
 import { connect } from 'react-redux';
-import GetPokemon from '../components/GetPokemon';
+import { Link } from 'react-router-dom';
 
-const PokemonCardPage = ({ pokeData, getPokemon }) => {
-    const [pokemonName, setPokemonName] = useState('')
+
+const PokemonCardPage = (props) => {
+    const { pokeData, getPokemon, getDetailedPokemon } = props;
 
     useEffect(() => {
         getPokemon()
@@ -25,7 +27,7 @@ const PokemonCardPage = ({ pokeData, getPokemon }) => {
                         <div>
                             {pokeData && pokeData.pokemons && pokeData.pokemons.map((poke, i) => {
                                 return <div key={i}>
-                                    <p>{poke.name}</p>
+                                    <Link to={`${poke.name}`} onClick={() => getDetailedPokemon(poke.url)}>{poke.name}</Link>
                                 </div>
                             })}
                         </div>
@@ -44,7 +46,8 @@ const matchStateToProps = state => {
 
 const matchDispatchToProps = dispatch => {
     return {
-        getPokemon: () => dispatch(getPokemon())
+        getPokemon: () => dispatch(getPokemon()),
+        getDetailedPokemon: detailedPokemonLink => dispatch(getDetailedPokemon(detailedPokemonLink))
     }
 }
 
