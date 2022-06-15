@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { getPokemon } from '../redux/features/GetPokemonList/getPokemonAction';
-import {getDetailedPokemon} from '../redux/features/DetailedPokemon/detailedPokemonAction'
+import { getDetailedPokemon } from '../redux/features/DetailedPokemon/detailedPokemonAction'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import classes from '../cssModules/PokemonCard.module.css'
 
 
 const PokemonCardPage = (props) => {
-    const { pokeData, getPokemon} = props;
+    const { pokeData, getPokemon } = props;
     const [number, setNumber] = useState(40)
 
     const incrementer = () => {
         return setNumber(number + 20)
     }
-    
-    
+
+
 
     console.log(number)
 
@@ -23,30 +24,35 @@ const PokemonCardPage = (props) => {
 
     return (
         <div>
-             <>
-                {pokeData.loading ? (
-                    <h2>Pokemon Loading...</h2>
-                ) : pokeData.error ? (
-                    <h2>{pokeData.error}</h2>
-                ) : (
-                    <div>
-                        <div>
-                            <h2>Your Pokemon</h2>
-                        </div>
-                        <div>
-                            {pokeData && pokeData.pokemons && pokeData.pokemons.map((poke, i) => {
-                                return <div key={i}>
-                                    <Link to={`${poke.name}`} onClick={() => props.getDetailedPokemonDispatch(poke.url)}>{poke.name}</Link>
-                                </div>
-                            })}
-                            <button onClick={() => {
-                                incrementer();
-                                getPokemon(number)
-                            }}>More...</button>
-                        </div>
+
+            {pokeData.loading ? (
+                <h2>Pokemon Loading...</h2>
+            ) : pokeData.error ? (
+                <h2>{pokeData.error}</h2>
+            ) : (
+                <div className={classes.TableContainer}>
+                    <div className={classes.Container}>
+                        <table className={classes.Table}>
+                            <tbody>
+                                <tr ><h1 className={classes.TableRowTop}>Pokemon Database</h1></tr>
+                                {pokeData && pokeData.pokemons && pokeData.pokemons.map((poke, i) => {
+                                    return <div key={i} className={classes.LinkDiv}>
+                                        <td><Link to={`${poke.name}`} onClick={() => props.getDetailedPokemonDispatch(poke.url)} className={classes.Link}><h2 className={classes.TableRowData}>{poke.name}</h2></Link></td>
+                                    </div>
+                                })}
+                            </tbody>
+                        </table>
                     </div>
-                )}
-            </>
+                </div>
+            )}
+            <div className={classes.ButtonDiv}>
+            <button onClick={() => {
+                incrementer();
+                getPokemon(number);
+            }}
+                className={classes.Button}>More...</button>
+                </div>
+
         </div>
     );
 };
