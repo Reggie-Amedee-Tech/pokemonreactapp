@@ -1,0 +1,70 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.CardDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.PokemonNameDiv {
+    border-bottom: 1px solid black;
+}
+
+.PokemonName {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.PokemonPictureDiv {
+    padding: 10px;
+}
+
+.PokemonPictureContainer {
+    border: 1px solid black;
+}
+
+.BottomDiv {
+    padding: 10px;
+    
+}
+
+.BottomContainer {
+    border: 1px solid black;
+}
+
+.BottomContainerTitle {
+    text-align: center;
+}
+
+.PTag {
+    text-align: center;
+}
+
+.AboutContainer {
+    border-bottom: 1px solid black;
+}
+
+.AboutDetailsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.AboutLeft {
+    padding: 10px 0px;
+}
+
+.AboutRight {
+    padding: 10px 0px;
+}
