@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 
 
 const PokemonDetails = (props) => {
     const { detailedPokeData } = props;
+    const [pokemonGames, setPokemonGames] = useState([])
 
-    useEffect(() => {
-        console.log(detailedPokeData)
-    }, [])
+
+    
+    
     
 
     return (
@@ -16,9 +17,7 @@ const PokemonDetails = (props) => {
             {detailedPokeData.loading ? <h2>Please reload pokemon information</h2> : detailedPokeData.loading === false ? <div>
             <img src={detailedPokeData.detailedPokemon.sprites.front_shiny} alt="pokemon avatar"></img>
             <p>{detailedPokeData.detailedPokemon.height}</p>
-            <p>{detailedPokeData.detailedPokemon.game_indices.map(item => {
-                return <p>{item.version.name}</p>
-            })}</p>
+            <p>{detailedPokeData.detailedPokemon.game_indices.map(item => item.version.name)[0]}</p>
             <p>{detailedPokeData.detailedPokemon.abilities.map(item => {
                 return <p>{item.ability.name}</p>
             })}</p>

@@ -7,6 +7,15 @@ import { Link } from 'react-router-dom';
 
 const PokemonCardPage = (props) => {
     const { pokeData, getPokemon} = props;
+    const [number, setNumber] = useState(40)
+
+    const incrementer = () => {
+        return setNumber(number + 20)
+    }
+    
+    
+
+    console.log(number)
 
     useEffect(() => {
         getPokemon()
@@ -30,6 +39,10 @@ const PokemonCardPage = (props) => {
                                     <Link to={`${poke.name}`} onClick={() => props.getDetailedPokemonDispatch(poke.url)}>{poke.name}</Link>
                                 </div>
                             })}
+                            <button onClick={() => {
+                                incrementer();
+                                getPokemon(number)
+                            }}>More...</button>
                         </div>
                     </div>
                 )}
@@ -46,7 +59,7 @@ const matchStateToProps = state => {
 
 const matchDispatchToProps = dispatch => {
     return {
-        getPokemon: () => dispatch(getPokemon()),
+        getPokemon: numberOfPokemon => dispatch(getPokemon(numberOfPokemon)),
         getDetailedPokemonDispatch: detailedPokemonLink => dispatch(getDetailedPokemon(detailedPokemonLink))
     }
 }
