@@ -29,6 +29,7 @@ export const getPokemon = () => {
         .then(response => {
             const pokemon = response.data.results
             dispatch(getPokemonSuccess(pokemon))
+            console.log(pokemon)
         })
         .catch(error => {
             const errorMsg = error.message

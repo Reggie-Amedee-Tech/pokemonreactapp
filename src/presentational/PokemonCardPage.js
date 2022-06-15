@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const PokemonCardPage = (props) => {
-    const { pokeData, getPokemon, getDetailedPokemon } = props;
+    const { pokeData, getPokemon} = props;
 
     useEffect(() => {
         getPokemon()
@@ -27,7 +27,7 @@ const PokemonCardPage = (props) => {
                         <div>
                             {pokeData && pokeData.pokemons && pokeData.pokemons.map((poke, i) => {
                                 return <div key={i}>
-                                    <Link to={`${poke.name}`} onClick={() => getDetailedPokemon(poke.url)}>{poke.name}</Link>
+                                    <Link to={`${poke.name}`} onClick={() => props.getDetailedPokemonDispatch(poke.url)}>{poke.name}</Link>
                                 </div>
                             })}
                         </div>
@@ -47,7 +47,7 @@ const matchStateToProps = state => {
 const matchDispatchToProps = dispatch => {
     return {
         getPokemon: () => dispatch(getPokemon()),
-        getDetailedPokemon: detailedPokemonLink => dispatch(getDetailedPokemon(detailedPokemonLink))
+        getDetailedPokemonDispatch: detailedPokemonLink => dispatch(getDetailedPokemon(detailedPokemonLink))
     }
 }
 
