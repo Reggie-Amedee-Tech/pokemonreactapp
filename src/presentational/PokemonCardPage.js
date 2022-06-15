@@ -14,10 +14,6 @@ const PokemonCardPage = (props) => {
         return setNumber(number + 20)
     }
 
-
-
-    console.log(number)
-
     useEffect(() => {
         getPokemon()
     }, [])

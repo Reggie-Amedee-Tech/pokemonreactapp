@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import classes from '../cssModules/PokemonDetails.module.css'
 
 
@@ -7,6 +8,7 @@ import classes from '../cssModules/PokemonDetails.module.css'
 const PokemonDetails = (props) => {
     const { detailedPokeData } = props;
     const [pokemonGames, setPokemonGames] = useState([])
+    const navigate = useNavigate()
 
     return (
         <div>
@@ -41,10 +43,16 @@ const PokemonDetails = (props) => {
                             </div>
                         </div>
                     </div>
-                </div> :
+                    <button onClick={() => navigate(-1)} className={classes.Button}>Go Back</button>
+                    
+                </div>
+                
+                 :
                 <h2>Pokemon does not exist</h2>}
+                
 
         </div>
+        
     );
 };
 

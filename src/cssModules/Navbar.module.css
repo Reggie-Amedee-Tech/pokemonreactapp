@@ -1,10 +1,18 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 .Link {
     text-decoration: none;
-    color: black;
+    color: white;
     margin-right: 30px;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .Div {
     padding: 30px;
-    background-color: #FFCB05;
+    background-color: #CC0000;
+    border-bottom: 3px solid black;
 }

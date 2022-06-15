@@ -8,17 +8,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5%;
     
 }
 
 .Container {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 5px solid black;
+    border-radius: 10px;
 }
 
 .PokemonNameDiv {
-    border-bottom: 1px solid black;
+    border-bottom: 5px solid black;
+    background-color: antiquewhite;
 }
 
 .PokemonName {
@@ -31,7 +34,16 @@
 }
 
 .PokemonPictureContainer {
-    border: 1px solid black;
+    border: 5px solid black;
+    background-color: antiquewhite;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Img{
+    width: 50%;
 }
 
 .BottomDiv {
@@ -40,11 +52,14 @@
 }
 
 .BottomContainer {
-    border: 1px solid black;
+    border: 5px solid black;
+    border-radius: 3px;
+    background-color: antiquewhite;
 }
 
 .BottomContainerTitle {
     text-align: center;
+    padding: 5px 0px;
 }
 
 .PTag {
@@ -52,13 +67,14 @@
 }
 
 .AboutContainer {
-    border-bottom: 1px solid black;
+    border-bottom: 5px solid black;
 }
 
 .AboutDetailsContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 .AboutLeft {
@@ -67,4 +83,14 @@
 
 .AboutRight {
     padding: 10px 0px;
+    
+}
+
+.Button {
+    margin-top: 10px;
+    font-size: larger;
+    padding: 5px;
+    background-color: #FF0000;
+    color: white;
+    font-weight: bold;
 }
