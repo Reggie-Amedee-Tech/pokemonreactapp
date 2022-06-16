@@ -24,3 +24,12 @@
     }
     
 }
+
+@media only screen and (max-width: 400px) {
+    .Link {
+        margin: 0 auto;
+        font-size: small;
+    }
+    
+}
+
