@@ -6,17 +6,17 @@ import PokemonDetails from './presentational/PokemonDetails';
 import {Route, Routes} from 'react-router-dom'
 import PokemonCardPage from './presentational/PokemonCardPage';
 import Header from './presentational/Header';
+import HomePage from './presentational/HomePage';
 
 
 
 
 function App() {
-  
-  
   return (
     <Provider store={store}>
       <Header />
       <Routes>
+      <Route path="home" element={<HomePage />}/>
       <Route path="search" element={<PokemonSearchPage/>}/>
       <Route path="pokemonList" element={<PokemonCardPage />}/>
       <Route path="pokemonList/:id"  element={<PokemonDetails/>}/>

@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+}
+
+.DivRight{
+    background-color: #CC0000;
+    flex: 1;
+    border-right: 3px black solid;
+}
+
+.DivRightContainer {
+
+}
+
+.DivLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    background-color: #3B4CCA;
+}
+
+
+.DivLeftButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.Link {
+    padding: 10px;
+    background-color: #CC0000;
+    text-decoration: none;
+    color: white;
+    border: 5px solid black;
+    font-weight: bolder;
+}
+

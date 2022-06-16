@@ -4,9 +4,6 @@
     background-size: cover;
     min-height: 100vh;
     max-height: fit-content;
-    
-    
-    
 }
 
 .DivTop {
@@ -30,12 +27,11 @@
     background-color: #FF0000;
     color: white;
     font-weight: bold;
-    
-    
 }
 
 .Img {
     margin: 0 auto;
+    width: 100%;
 }
 
 .Name {
@@ -49,4 +45,16 @@
     width: 30%;
     position: relative;
     left: 35vh;
+}
+
+@media only screen and (max-width: 850px) {
+    .DivBottom {
+        position: static;
+        margin: 0 auto;
+    }
+
+    .Img {
+        height: 250px;
+        width: 270px;
+    }
 }

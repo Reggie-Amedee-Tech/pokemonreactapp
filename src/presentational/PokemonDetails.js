@@ -12,7 +12,7 @@ const PokemonDetails = (props) => {
 
     return (
         <div>
-            {detailedPokeData.loading ? <h2>Please reload pokemon information</h2> : detailedPokeData.loading === false ?
+            {detailedPokeData.loading ? <h2 className={classes.H2}>Please Reload Pokemon Information</h2> : detailedPokeData.loading === false ?
                 <div className={classes.CardDiv}>
                     <div className={classes.Container}>
                         <div className={classes.PokemonNameDiv}>
