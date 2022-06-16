@@ -16,7 +16,7 @@ function App() {
     <Provider store={store}>
       <Header />
       <Routes>
-      <Route path="home" element={<HomePage />}/>
+      <Route path="/" element={<HomePage />}/>
       <Route path="search" element={<PokemonSearchPage/>}/>
       <Route path="pokemonList" element={<PokemonCardPage />}/>
       <Route path="pokemonList/:id"  element={<PokemonDetails/>}/>
