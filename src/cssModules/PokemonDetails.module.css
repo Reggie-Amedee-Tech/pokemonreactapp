@@ -109,3 +109,11 @@
     background-color: #3e8e41;
     color: white;
 }
+
+@media screen and (max-width: 525px) {
+    .CardDiv {
+        width: 90vw;
+        margin: 0 auto;
+        margin-top: 5%;
+    }
+}
