@@ -54,3 +54,11 @@
     background-color: #3e8e41;
     color: white;
 }
+
+@media screen and (max-width: 525px) {
+
+    .DivLeftButtons {
+        display: flex;
+        flex-direction: column;
+    }
+}
