@@ -20,7 +20,6 @@ const PokemonCardPage = (props) => {
 
     return (
         <div>
-
             {pokeData.loading ? (
                 <h2>Pokemon Loading...</h2>
             ) : pokeData.error ? (

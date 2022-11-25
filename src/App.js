@@ -21,6 +21,9 @@ function App() {
       <Route path="pokemonList" element={<PokemonCardPage />}/>
       <Route path="pokemonList/:id"  element={<PokemonDetails/>}/>
       </Routes>
+      <footer>
+          Page Created By Reginald Jean Amedee
+        </footer>
     </Provider>
   );
 }

@@ -3,40 +3,45 @@
     padding: 0px;
 }
 
+.Div {
+    width: 100vw;
+}
+
 .Container {
-    display: flex;
-    flex-direction: row;
-    height: 90vh;
-}
-
-.DivRight{
-    background-color: #CC0000;
-    flex: 1;
-    border-right: 3px black solid;
-}
-
-.DivRightContainer {
-
-}
-
-.DivLeft {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    background-color: #3B4CCA;
-}
-
-
-.DivLeftButtons {
-    display: flex;
-    flex-direction: row;
+    height: 100%;
     justify-content: space-around;
+    
 }
 
+.BackgroundImageFrame {
+    height: 75vh;
+    
+}
 
+.BackgroundImage{
+    background-image: url('../assets/pokemonwallpaper.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
 
-.Link {
+img{
+    width: 15rem;
+}
+
+h1 {
+    line-height: 45px;
+    width: 600px;
+    margin-bottom: 10px;
+    color: #000080
+}
+
+.Button{
     background-color: #ddd;
     text-decoration: none;
     border: none;
@@ -48,17 +53,25 @@
     margin: 4px 2px;
     transition: 0.3s;
     border: 4px solid black;
+    height: 70px;
   }
   
-.Link:hover {
+.Button:hover {
     background-color: #3e8e41;
     color: white;
 }
 
-@media screen and (max-width: 525px) {
-
-    .DivLeftButtons {
-        display: flex;
-        flex-direction: column;
-    }
+.Top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
 }
+
+.Bottom{
+   
+}
+
+
+
+
