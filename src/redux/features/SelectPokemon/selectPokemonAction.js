@@ -22,7 +22,6 @@ const selectPokemonError = selectedPokemonError => {
 }
 
 export const selectPokemonApiCall = (selectedPokemon = 'v') => {
-
     return (dispatch) => {
         dispatch(selectPokemon)
         axios.get('https://pokeapi.co/api/v2/pokemon/' + selectedPokemon)
@@ -38,11 +37,7 @@ export const selectPokemonApiCall = (selectedPokemon = 'v') => {
                 const errorMsg = error.message
                 dispatch(selectPokemonError(errorMsg))
             })
-
-
-
     }
-
 }
 
 

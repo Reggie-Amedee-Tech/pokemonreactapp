@@ -3,6 +3,7 @@ import { POKEMON_ERROR, POKEMON_NAME, POKEMON_QUERY } from "./selectPokemonType"
 const initialState = {
     loading: null,
     selectedPokemon: [],
+    pokemonLoaded: false,
     error: ''
 }
 
@@ -19,14 +20,16 @@ const initialState = {
         return {
             ...state,
             selectedPokemon: action.payload,
-            loading: true
+            loading: true,
+            pokemonLoaded: true
         }
 
         case POKEMON_ERROR: 
         return {
             ...state,
             selectedPokemonError: action.payload,
-            loading: false
+            loading: false,
+            pokemonLoaded: false
         }
 
         default:

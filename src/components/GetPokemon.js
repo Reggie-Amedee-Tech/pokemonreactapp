@@ -4,7 +4,6 @@ import classes from '../cssModules/GetPokemon.module.css'
 
 const GetPokemon = (props) => {
     const {pokemonName, setPokemonName} = props;
-
     
     return (
         <div>

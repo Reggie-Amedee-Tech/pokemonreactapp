@@ -22,7 +22,6 @@ export const getPokemonFailure = error => {
 }
 
 export const getPokemon = (numberOfPokemon = 20) => {
-
     return async (dispatch) => {
         dispatch(getPokemonRequest)
         const response = axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${numberOfPokemon}&offset=0`)
@@ -37,7 +36,6 @@ export const getPokemon = (numberOfPokemon = 20) => {
         })
             
         
-
     }
 }
 /*
