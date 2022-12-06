@@ -37,8 +37,10 @@ function PokemonSearchPage(props) {
             return <h2 style={{backgroundColor: "#D685AD"}} className={classes.PokemonType}>{selectedPokeData.selectedPokemon.types[0].type.name}</h2>
         } else if (type === 'rock') {
             return <h2 style={{backgroundColor: "#B6A136"}} className={classes.PokemonType}>{selectedPokeData.selectedPokemon.types[0].type.name}</h2>
+        } else if (type === 'water') {
+            return <h2 style={{backgroundColor: "#6390F0"}} className={classes.PokemonType}>{selectedPokeData.selectedPokemon.types[0].type.name}</h2>
         } else {
-            return <h1>{selectedPokeData.selectedPokemon.types[0].type.name}</h1>
+            return <h2>{selectedPokeData.selectedPokemon.types[0].type.name}</h2>
         }
     }
 

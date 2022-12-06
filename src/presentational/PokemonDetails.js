@@ -11,10 +11,11 @@ const PokemonDetails = (props) => {
     const navigate = useNavigate()
 
     return (
-        <div>
-            {detailedPokeData.loading ? <h2 className={classes.H2}>Please Reload Pokemon Information</h2> : detailedPokeData.loading === false ?
+        <div className={classes.DivPrime}>
+            <div className={classes.Container}>
+            {detailedPokeData.loading === true ? <h2 className={classes.H2}>...Loading</h2> : detailedPokeData.loading === false ?
                 <div className={classes.CardDiv}>
-                    <div className={classes.Container}>
+                    <div className={classes.CardContainer}>
                         <div className={classes.PokemonNameDiv}>
                             <h2 className={classes.PokemonName}>{detailedPokeData.detailedPokemon.name}</h2>
                         </div>
@@ -50,7 +51,7 @@ const PokemonDetails = (props) => {
                  :
                 <h2>Pokemon does not exist</h2>}
                 
-
+                </div>
         </div>
         
     );
