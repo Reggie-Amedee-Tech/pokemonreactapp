@@ -2,12 +2,11 @@ const mongoose = require("mongoose");
 
 const SavedPokemonSchema = new mongoose.Schema({
     pokemonListName: {
-        type: String,
-        required: true
+        type: String
+        
     },
     pokemonList: {
-        type: Array,
-        required: true
+        type: Array
     }
 }, {timestamps: true})
 

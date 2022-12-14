@@ -7,9 +7,9 @@ import {Route, Routes} from 'react-router-dom'
 import PokemonCardPage from './presentational/PokemonCardPage';
 import Header from './presentational/Header';
 import HomePage from './presentational/HomePage';
-
-
-
+import SavedPokemonPage from './presentational/SavedPokemonPage';
+import AllPokemonLists from './presentational/AllPokemonLists';
+import ViewPokemonDetails from './components/ViewPokemonDetails';
 
 function App() {
   return (
@@ -20,6 +20,10 @@ function App() {
       <Route path="search" element={<PokemonSearchPage/>}/>
       <Route path="pokemonList" element={<PokemonCardPage />}/>
       <Route path="pokemonList/:id"  element={<PokemonDetails/>}/>
+      <Route path="savedPokemonList" element={<SavedPokemonPage/>}/>
+      <Route path="allLists" element={<AllPokemonLists/>}/>
+      <Route path="allLists/:id" element={<ViewPokemonDetails/>}/>
+      <Route path="allLists/:id/search" element={<PokemonSearchPage/>}/>
       </Routes>
       <footer>
           Page Created By Reginald Jean Amedee
