@@ -6,7 +6,7 @@ This application is a one stop shop for everything Pokemon! You are able to sear
 ## Features
 * Query Different Pokemon and get basic information about them
 * Save Favorited Pokemon in a list
-** View details about specific Pokemon saved in the list
+  * View details about specific Pokemon saved in the list
 
 ## Installation
 * Form and clone this repository
