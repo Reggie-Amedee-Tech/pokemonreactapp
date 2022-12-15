@@ -1,21 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { selectPokemonApiCall } from '../redux/features/SelectPokemon/selectPokemonAction';
 import { connect } from 'react-redux';
 import GetPokemon from '../components/GetPokemon';
 import classes from '../cssModules/selectPokemonPage.module.css'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import e from 'cors';
 
 function PokemonSearchPage(props) {
     const [pokemonName, setPokemonName] = useState('');
+    const [pokemonList, setPokemonList] = useState([]);
+    const [numberOfPokemonSaved, setNumberOfPokemonSaved] = useState(0);
     const { selectedPokeData } = props;
 
-    const savePokemon = (e) => {
-        e.preventDefault();
+    const location = useLocation();
 
-        
+    const id = location.pathname.slice();
+
+    console.log(pokemonList)
+    console.log(numberOfPokemonSaved)
+
+    const addPokemonToList = (object) => {
+        setPokemonName(selectedPokeData.selectedPokemon.name)
+        setPokemonList(pokemonList => ([
+            ...pokemonList,
+            object
+        ])) 
+        setNumberOfPokemonSaved(numberOfPokemonSaved + 1)
     }
 
+    const savePokemon = async () => {
+
+        try {
+            const resp = await axios.put("http://localhost:4000/api/pokemon/savePokemon/" + id, {
+            pokemonList
+        })
+        console.log(resp.data)
+        } catch (err) {
+            console.log(err.message)
+        }
+    }
 
     const typeSelector = (type) => {
         if (type === 'electric') {
@@ -73,12 +97,17 @@ function PokemonSearchPage(props) {
                                 <h2>{selectedPokeData.selectedPokemon.name}</h2>
                                 {typeSelector(selectedPokeData.selectedPokemon.types[0].type.name)}
                             </div>
-                            <button className={classes.Button} onClick={() => {
-                                
-                                
+                            <button className={classes.Button} disabled={numberOfPokemonSaved < 1}  onClick={(e) => {
+                                if (numberOfPokemonSaved < 1) {
+                                    e.currentTarget.disabled = true
+                                }
+                                savePokemon()
                             }}>Save</button>
-                            
-
+                            <button className={classes.Button} onClick={() => {
+                            addPokemonToList({
+                                pokemonName: pokemonName
+                            })
+                            }}>Add To List</button>
                         </div> : <h2>Loading...</h2>}
                 </div>
             </div>

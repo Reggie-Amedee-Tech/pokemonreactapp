@@ -8,12 +8,6 @@ const SavedPokemonComponent = () => {
   const [pokemonListName, setPokemonListName] = useState('');
 
   const navigate = useNavigate();
-
-  console.log(pokemonList)
-
-  useEffect(() => {
-    
-  }, [])
   
   const startList = async (e) => {
     e.preventDefault();

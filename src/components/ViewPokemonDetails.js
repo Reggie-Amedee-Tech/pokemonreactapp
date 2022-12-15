@@ -8,25 +8,18 @@ const ViewPokemonDetails = () => {
 
     const location = useLocation()
 
-    const listPathName = location.pathname.slice(10)
-
-    console.log(listPathName)
+    const listId = location.pathname.slice(10)
 
     const navigate = useNavigate();
 
-    console.log(pokemon)
-
     useEffect(() => {
-        axios.get("http://localhost:4000/api/pokemon/allPokemonList/" + listPathName)
+        axios.get("http://localhost:4000/api/pokemon/allPokemonList/" + listId)
             .then(res => {
                 setPokemon(res.data.pokemonList)
                 setLoaded(true)
             })
             .catch(err => console.log(err.message))
     }, [])
-
-    
-
 
     return (
         <div>

@@ -47,13 +47,10 @@ const PokemonDetails = (props) => {
                     <button onClick={() => navigate(-1)} className={classes.Button}>Go Back</button>
                     
                 </div>
-                
                  :
                 <h2>Pokemon does not exist</h2>}
-                
                 </div>
         </div>
-        
     );
 };
 

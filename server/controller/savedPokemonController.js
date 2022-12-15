@@ -18,9 +18,9 @@ module.exports.allPokemonList = (request, response) => {
 }
 
 module.exports.getListDetails = (request, response) => {
-    SaveFavoritePokemon.findOne({pokemonListName: request.params.id})
+    SaveFavoritePokemon.findOne({_id: request.params.id})
     .then(res => response.json(res).status(200))
-    .catch(err => response.jsonS(err).status(400))
+    .catch(err => response.json(err).status(400))
 }
 
 module.exports.addPokemonToList = (request, response) => {

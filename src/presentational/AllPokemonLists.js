@@ -25,7 +25,7 @@ const AllPokemonLists = () => {
         {loaded === true ? pokemonList.map(list => {
             return <ol>
                 <li onClick={() => {
-                    navigate(list.pokemonListName)
+                    navigate(list._id)
                 }} style={{fontStyle: "underline"}}>{list.pokemonListName}</li>
             </ol>
         }) : <h2>Loading...</h2> }
