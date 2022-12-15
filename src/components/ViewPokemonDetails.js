@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import classes from '../cssModules/PokemonCard.module.css';
 
 const ViewPokemonDetails = () => {
     const [pokemon, setPokemon] = useState([]);
@@ -22,24 +24,30 @@ const ViewPokemonDetails = () => {
     }, [])
 
     return (
-        <div>
-            {loaded === true ? 
-                <div>
-                    <div>
-                    {pokemon.length < 1 ? <h1>No Pokemon Saved</h1> : pokemon.map(poke => {
-                        return <div>
-                            <h1 onClick={() => {
-                                navigate("" + poke.pokemonName)
-                            }}>{poke.pokemonName}</h1>
-                        </div>
-                    })}
-                    </div>
-                    <button onClick={() => {
-                        navigate("search")
-                    }}>Search Pokemon</button>
-                </div> : <h1>Loading...</h1>}
-        </div>
+        <div className={classes.TableContainer}>
+            {pokemon.length < 1 ? <h1>No pokemon saved</h1> : <div className={classes.Container}>
+                        <table className={classes.Table}>
+                            <tbody>
+                                <tr ><h1 className={classes.TableRowTop}>All Lists</h1></tr>
+                                {pokemon.map((poke, i) => {
+                                    return <div key={i} className={classes.LinkDiv}>
+                                        <td><Link to={`${poke.pokemonName}`} className={classes.Link}><h2 className={classes.TableRowData}>{poke.pokemonName}</h2></Link></td>
+                                    </div>
+                                })}
+                            </tbody>
+                        </table>
+                    </div> }
+                    
+                </div>
     )
 }
+
+// {pokemon.length < 1 ? <h1>No Pokemon Saved</h1> : pokemon.map(poke => {
+//     return <div>
+//         <h1 onClick={() => {
+//             navigate("" + poke.pokemonName)
+//         }}>{poke.pokemonName}</h1>
+//     </div>
+// })}
 
 export default ViewPokemonDetails

@@ -7,9 +7,8 @@ import classes from '../cssModules/PokemonDetails.module.css'
 const PokemonDetailFromList = (props) => {
     const [pokemonDetails, setPokemonDetails] = useState([]);
     const [loaded, setLoaded] = useState(false);
-
-    const location = useLocation()
-    const pokemonName = location.pathname.slice(35)
+    const location = useLocation();
+    const pokemonName = location.pathname.slice(35);
     const navigate = useNavigate();
 
     useEffect(() => {
