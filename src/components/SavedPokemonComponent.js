@@ -16,6 +16,7 @@ const SavedPokemonComponent = () => {
       pokemonListName
     })
     .then(res => {
+      navigate("/allLists")
       console.log(res)})
     .catch(err => console.log(err.message))
   }
