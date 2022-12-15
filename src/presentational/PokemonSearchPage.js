@@ -15,10 +15,7 @@ function PokemonSearchPage(props) {
 
     const location = useLocation();
 
-    const id = location.pathname.slice();
-
-    console.log(pokemonList)
-    console.log(numberOfPokemonSaved)
+    const id = location.pathname.slice(10, 34);
 
     const addPokemonToList = (object) => {
         setPokemonName(selectedPokeData.selectedPokemon.name)
