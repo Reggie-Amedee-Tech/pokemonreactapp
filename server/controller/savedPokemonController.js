@@ -28,3 +28,9 @@ module.exports.addPokemonToList = (request, response) => {
     .then(res => response.json(res).status(200))
     .catch(err => response.json(err).status(400))
 }
+
+module.exports.deleteList = (request, response) => {
+    SaveFavoritePokemon.deleteOne({_id: request.params.id})
+    .then(res => response.json(res).status(200))
+    .catch(err => response.json(err).status(400))
+}

@@ -34,7 +34,6 @@
     border: 1px solid black;
 }
 
-
 .Table {
     width: 100%;
 }
@@ -68,9 +67,22 @@
     margin: 4px 2px;
     transition: 0.3s;
     border: 4px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   
 .Button:hover {
     background-color: #3e8e41;
     color: white;
+}
+
+.DeleteButton{
+    border: 3px solid black;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.DeleteButton:hover{
+    background-color: #CC0000;
 }
