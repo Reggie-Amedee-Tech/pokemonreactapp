@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import classes from '../cssModules/PokemonDetails.module.css'
@@ -9,6 +9,8 @@ const PokemonDetails = (props) => {
     const { detailedPokeData } = props;
     const [pokemonGames, setPokemonGames] = useState([])
     const navigate = useNavigate()
+
+    console.log(detailedPokeData.detailedPokemon)
 
     return (
         <div className={classes.DivPrime}>

@@ -1,6 +1,5 @@
 import { GET_POKEMON_DETAILS, GET_POKEMON_DETAILS_FAILED, GET_POKEMON_DETAILS_REQUEST } from "./detailedPokemonType"
 
-
 const initialState = {
     loading: true,
     detailedPokemon: [],

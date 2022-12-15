@@ -28,7 +28,9 @@ const ViewPokemonDetails = () => {
                     <div>
                     {pokemon.length < 1 ? <h1>No Pokemon Saved</h1> : pokemon.map(poke => {
                         return <div>
-                            <h1>{poke.pokemonName}</h1>
+                            <h1 onClick={() => {
+                                navigate("" + poke.pokemonName)
+                            }}>{poke.pokemonName}</h1>
                         </div>
                     })}
                     </div>

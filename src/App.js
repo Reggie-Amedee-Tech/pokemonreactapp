@@ -10,6 +10,7 @@ import HomePage from './presentational/HomePage';
 import SavedPokemonPage from './presentational/SavedPokemonPage';
 import AllPokemonLists from './presentational/AllPokemonLists';
 import ViewPokemonDetails from './components/ViewPokemonDetails';
+import PokemonDetailFromList from './presentational/PokemonDetailFromList';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="allLists" element={<AllPokemonLists/>}/>
       <Route path="allLists/:id" element={<ViewPokemonDetails/>}/>
       <Route path="allLists/:id/search" element={<PokemonSearchPage/>}/>
+      <Route path='allLists/:id/:id' element={<PokemonDetailFromList/>}/>
       </Routes>
       <footer>
           Page Created By Reginald Jean Amedee
