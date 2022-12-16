@@ -8,6 +8,8 @@ This application is a one stop shop for everything Pokemon! You are able to sear
 * Save Favorited Pokemon in a list
   * View details about specific Pokemon saved in the list
 
+<img src="src/assets/savedList.png" width="300px">
+
 ## Installation
 * Form and clone this repository
 * Install NPM packages by running npm install
