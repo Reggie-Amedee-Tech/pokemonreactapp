@@ -8,7 +8,15 @@ This application is a one stop shop for everything Pokemon! You are able to sear
 * Save Favorited Pokemon in a list
   * View details about specific Pokemon saved in the list
 
-<img src="src/assets/savedList.png" width="300px">
+### Save Pokemon List
+<img src="src/assets/savedList.png" max-width="100%">
+
+### View Saved Pokemon In List
+<img src="src/assets/savedPokemonInList.png" max-width="100%">
+<img src="src/assets/PokemonCard.png" max-width="100%">
+
+### Query Pokemon
+<img src="src/assets/findPokemon.png" max-width="100%">
 
 ## Installation
 * Form and clone this repository
