@@ -43,7 +43,7 @@ const AllPokemonLists = () => {
                                 <td onClick={() => {
                                     deleteListFromArray(poke._id)
                                     deleteList(poke._id)
-                                }} className={classes.DeleteButton}>Delete List</td>
+                                }} className={classes.DeleteButton} style={{marginBottom: "10px"}}>Delete List</td>
                             </div>
                         })}
                     </tbody>

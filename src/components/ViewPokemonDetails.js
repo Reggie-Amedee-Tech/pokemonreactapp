@@ -35,7 +35,7 @@ const ViewPokemonDetails = () => {
             </div> : <div className={classes.Container}>
                 <table className={classes.Table}>
                     <tbody>
-                        <tr><h1 className={classes.TableRowTop}>All Lists</h1></tr>
+                        <tr><h1 className={classes.TableRowTop}>Saved Pokemon</h1></tr>
                         {pokemon.map((poke, i) => {
                             return <div key={i} className={classes.LinkDiv}>
                                 <td><Link to={`${poke.pokemonName}`} className={classes.Link}><h2 className={classes.TableRowData}>{poke.pokemonName}</h2></Link></td>
@@ -48,13 +48,5 @@ const ViewPokemonDetails = () => {
         </div>
     )
 }
-
-// {pokemon.length < 1 ? <h1>No Pokemon Saved</h1> : pokemon.map(poke => {
-//     return <div>
-//         <h1 onClick={() => {
-//             navigate("" + poke.pokemonName)
-//         }}>{poke.pokemonName}</h1>
-//     </div>
-// })}
 
 export default ViewPokemonDetails

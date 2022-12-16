@@ -1,0 +1,51 @@
+.Div {
+    height: 100vh;
+    width: 100vw;
+    background-color: #343434;
+}
+
+.Container{
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    border: 20px solid white;
+    background-color: whitesmoke;
+}
+
+.SearchInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 90%;
+    align-items: center;
+}
+
+.Label{
+    width: 15em;
+    font-size: larger;
+}
+
+.Input{
+    width: 50vw;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.Button{
+    background-color: #ddd;
+    text-decoration: none;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.3s;
+    border: 4px solid black;
+    width: 10vw;
+    border-radius: 20px;
+  }
+  
+.Button:hover {
+    background-color: #3e8e41;
+    color: white;
+}

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { selectPokemonApiCall } from '../redux/features/SelectPokemon/selectPokemonAction';
 import { connect } from 'react-redux';
 import GetPokemon from '../components/GetPokemon';
 import classes from '../cssModules/selectPokemonPage.module.css'
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
-import e from 'cors';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function PokemonSearchPage(props) {
     const [pokemonName, setPokemonName] = useState('');
@@ -14,6 +13,7 @@ function PokemonSearchPage(props) {
     const { selectedPokeData } = props;
 
     const location = useLocation();
+    const navigate = useNavigate();
 
     const id = location.pathname.slice(10, 34);
 
@@ -22,17 +22,25 @@ function PokemonSearchPage(props) {
         setPokemonList(pokemonList => ([
             ...pokemonList,
             object
-        ])) 
+        ]))
         setNumberOfPokemonSaved(numberOfPokemonSaved + 1)
     }
 
-    const savePokemon = async () => {
+    const pokemonSavedNumber = (int) => {
+        if (int === 0) {
+            return <p className={classes.NumberOfPokemonSaved} style={{color: "red"}}>{numberOfPokemonSaved}</p>
+        } else {
+            return <p className={classes.NumberOfPokemonSaved} style={{color: "green"}}>{numberOfPokemonSaved}</p>
+        }
+    }
 
+    const savePokemon = async () => {
         try {
             const resp = await axios.put("http://localhost:4000/api/pokemon/savePokemon/" + id, {
-            pokemonList
-        })
-        console.log(resp.data)
+                pokemonList
+            })
+            console.log(resp.data)
+            navigate("/allLists")
         } catch (err) {
             console.log(err.message)
         }
@@ -94,17 +102,20 @@ function PokemonSearchPage(props) {
                                 <h2>{selectedPokeData.selectedPokemon.name}</h2>
                                 {typeSelector(selectedPokeData.selectedPokemon.types[0].type.name)}
                             </div>
-                            <button className={classes.Button} disabled={numberOfPokemonSaved < 1}  onClick={(e) => {
-                                if (numberOfPokemonSaved < 1) {
-                                    e.currentTarget.disabled = true
-                                }
-                                savePokemon()
-                            }}>Save</button>
-                            <button className={classes.Button} onClick={() => {
-                            addPokemonToList({
-                                pokemonName: pokemonName
-                            })
-                            }}>Add To List</button>
+                            <div className={classes.ButtonDiv}>
+                                <button className={classes.Button} disabled={numberOfPokemonSaved < 1} onClick={(e) => {
+                                    if (numberOfPokemonSaved < 1) {
+                                        e.currentTarget.disabled = true
+                                    }
+                                    savePokemon()
+                                }}>Save</button>
+                                {pokemonSavedNumber(numberOfPokemonSaved)}
+                                <button className={classes.Button} onClick={() => {
+                                    addPokemonToList({
+                                        pokemonName: pokemonName
+                                    })
+                                }}>Add To List</button>
+                            </div>
                         </div> : <h2>Loading...</h2>}
                 </div>
             </div>

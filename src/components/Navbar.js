@@ -8,7 +8,7 @@ const Navbar = () => {
             <Link to="/" className={classes.Link}>Home</Link>
             <Link to="search" className={classes.Link}>Search Pokemon</Link>
             <Link to="pokemonList" className={classes.Link}>Search Pokemon List</Link>
-            <Link to="savedPokemonList" className={classes.Link}>Save Pokemon</Link>
+            <Link to="savedPokemonList" className={classes.Link}>Create List</Link>
             <Link to="allLists" className={classes.Link}>All Lists</Link>
         </div>
     );
