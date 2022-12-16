@@ -8,6 +8,9 @@ This application is a one stop shop for everything Pokemon! You are able to sear
 * Save Favorited Pokemon in a list
   * View details about specific Pokemon saved in the list
 
+### Create A New List!
+<img src="src/assets/createList.png" max-width="100%">
+
 ### Save Pokemon List
 <img src="src/assets/savedList.png" max-width="100%">
 
