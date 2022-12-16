@@ -1,6 +1,4 @@
-# Pokedex
-
-## Pokedex 
+# Pokedex 
 This application is a one stop shop for everything Pokemon! You are able to search for different Pokemon and find basic information about them. You can also save your favorite Pokemon in a list and view them later.
 
 ## Features
